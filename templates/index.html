@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accueil</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Put your sentence here</h1>
+    <form action="/" method="post">
+        <label for="Text">Text:</label>
+        <input type="text" id="Text" name="Text" class="form-input" required>
+        <br>
+        <input type="submit" value="Analyser">
+    </form>
+    {% if product %}
+    <p>text : {{ product['text'] }}</p>
+    <p>polarity : {{ product['polarity'] }}</p>
+    <p>subjectivity : {{ product['subjectivity'] }}</p>
+    <p>model_version : {{ product['model_version'] }}</p>
+    {% endif %}
+</body>
+</html>
