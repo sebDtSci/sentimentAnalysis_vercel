@@ -1,6 +1,6 @@
-## Sentiment Analysis
+# Sentiment Analysis
 
-### Structure :
+## Structure :
 ```bash
 ├── app.py
 ├── model

@@ -1,6 +1,4 @@
 from flask import Flask, request, jsonify,render_template
-import sys
-sys.path.append('../')
 from model.main import analyse_sentiment, __version__
 
 app = Flask(__name__)
@@ -18,7 +16,6 @@ def analyse(text:str)-> dict:
     polarity, subjectivity = analyse_sentiment(text)
 
     return {'text': text, 'polarity': polarity, 'subjectivity': subjectivity, "model_version" : __version__}
-
 
 if __name__ == '__main__':
     app.run(debug=True, host='127.0.0.1', port=5001)

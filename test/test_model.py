@@ -1,8 +1,5 @@
-import sys
-# Ajoute le répertoire racine du projet à sys.path
-sys.path.append('../')
 from model.main import analyse, analyse_sentiment, __version__
-from app import analyse as an
+from app.app import analyse as an
 
 def test_analyse():
     assert analyse(0) == 'Neutre'
