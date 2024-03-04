@@ -1,5 +1,5 @@
 from model.main import analyse, analyse_sentiment, __version__
-from app.app import analyse as an
+from src.app import analyse as an
 
 def test_analyse():
     assert analyse(0) == 'Neutre'
