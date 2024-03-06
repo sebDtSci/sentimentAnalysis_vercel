@@ -20,6 +20,16 @@ build:
   tools:
     python: "3.11"
 
+python:
+  install:
+    - requirements: requirements.txt
+    - method: pip
+      path: .
+
 # Build documentation in the "docs/" directory with Sphinx
 sphinx:
   configuration: source/conf.py
+
+formats:
+  - pdf
+  - epub
