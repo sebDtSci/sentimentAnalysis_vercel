@@ -1,21 +1,11 @@
-# Utilisez la version 2 du fichier de configuration
 version: 2
 
-# Configuration de Sphinx
 sphinx:
-  # Spécifiez le répertoire contenant les fichiers sources de la documentation
   configuration: docs/conf.py
 
-# Configuration de l'environnement Python
+formats: all
+
 python:
-  # Version de Python à utiliser
-  version: 3.8
-  # Installez votre environnement virtuel ici
+  version: 3.11
   install:
-    # Installez les dépendances du projet à partir du fichier requirements.txt
-    - requirements: requirements.txt
-    # Ou spécifiez le chemin vers votre documentation si elle nécessite des dépendances supplémentaires
-    # - requirements: docs/requirements.txt
-  # Activer l'installation de votre package (si nécessaire)
-  # - method: pip
-  #   path: .
+    - requirements: docs/requirements.txt

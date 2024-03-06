@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify,render_template
+from flask import Flask, request, render_template
 from model.main import analyse_sentiment, __version__
 
 app = Flask(__name__)
@@ -14,12 +14,11 @@ def home():
     Returns:
         str: The HTML content of the home page, with or without the product data included, depending on whether the request is GET or POST.
     """
-    if request.method == 'POST':
-        text = request.form['Text']
-        product = analyse(text)  # Supposons que cette fonction retourne un prix pour simplifier
-        return render_template('index.html', product=product)
-    else:
+    if request.method != 'POST':
         return render_template('index.html',products="products")
+    text = request.form['Text']
+    product = analyse(text)
+    return render_template('index.html', product=product)
 
 def analyse(text:str)-> dict:
     """Returns the sentence analysis
