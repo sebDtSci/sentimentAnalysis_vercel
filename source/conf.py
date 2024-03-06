@@ -20,6 +20,7 @@ release = '0.1.0'
 extensions = [
     'sphinx.ext.autodoc',  # Inclut la documentation à partir des docstrings
     'sphinx.ext.napoleon',  # Supporte les docstrings au format Google et NumPy
+    'myst_parser',
 ]
 
 templates_path = ['_templates']
