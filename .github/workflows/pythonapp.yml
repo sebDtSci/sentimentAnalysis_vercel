@@ -25,10 +25,3 @@ jobs:
         pytest -v
     - name: Security check
       run: bandit -r app/
-    - name: Doc
-      run: |
-        rm -rf docs
-        sphinx-quickstart docs/source
-        cd docs/source
-        make html -y
-      
